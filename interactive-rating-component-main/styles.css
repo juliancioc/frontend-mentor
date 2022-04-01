@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Overpass', sans-serif;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+.container {
+    background-color: #131518;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-wrapper, .card-rating-wrapper {
+    width: 100%;
+    height: 416px;
+    max-width: 412px;
+    border-radius: 30px;
+    background: radial-gradient(98.96% 98.96% at 50% 0%, #232a34 0%, #181e27 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 2rem;
+    margin: 1rem;
+}
+
+.card-wrapper h4 {
+    font-size: 28px;
+    color: #fff;
+    font-weight: 700;
+}
+
+.card-wrapper p {
+    font-size: 15px;
+    color: #969FAD;
+}
+
+.btn-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.btn-rating {
+    background: #262E38;
+    border-radius: 50%;
+    height: 44px;
+    width: 44px;
+    display: flex;
+    justify-content: center;
+    color: #7C8798;
+    align-items: center;
+    font-weight: 700;
+}
+
+.btn-rating:hover {
+    background: #fc7614;
+    color: #fff;
+    transition: all 0.4s ease-in-out;
+}
+
+.btn-rating:focus {
+    color: #fff;
+    background-color: #7C8798;
+    transition: all 0.4s ease-in-out;
+}
+
+.btn-send {
+    background: #fc7614;
+    border-radius: 23px;
+    width: 100%;
+    height: 45px;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+.btn-send:hover {
+    background: #fff;
+    color: #fc7614;
+    transition: all 0.5s ease-in-out;
+}
+
+.star-wrapper {
+    display: flex;
+    padding: 1rem;
+    background: #262E38;
+    border-radius: 50%;
+}
+
+.rating {
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+
+#rating-value {
+    background: #262E38;
+    padding: 0.5rem 1.1rem;
+    margin: 32px 0;
+    border-radius: 20px;
+    color: #fc7614;
+    font-size: 15px;
+}
