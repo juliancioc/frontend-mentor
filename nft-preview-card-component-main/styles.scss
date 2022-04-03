@@ -1,0 +1,142 @@
+$primaryColor: #0d192c;
+$secondaryColor: #15263f;
+$colorCyan: #00fff8;
+$fontColorSoftBlue: #8bacd9;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Outfit', sans-serif;
+}
+
+body {
+  background: $primaryColor;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  background-color: $secondaryColor;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  max-width: 350px;
+  height: 596px;
+  border-radius: 20px;
+  box-shadow: 0px 25px 25px rgba(0, 0, 0, 0.04);
+  text-align: left;
+
+  h4 {
+    color: #fff;
+    font-size: 22px;
+    margin: 24px 0 16px 0;
+    cursor: pointer;
+
+    &:hover {
+      color: $colorCyan;
+      transition: all 0.2s ease-in-out;
+    }
+  }
+
+  a {
+    position: relative;
+
+    &:hover {
+      height: 302px;
+      background: #00fff8;
+      border-radius: 10px;
+    }
+  }
+
+  a:hover {
+    .img-nft {
+      opacity: 0.5;
+    }
+
+    .img-view {
+      opacity: 1;
+    }
+  }
+
+  .img-nft {
+    width: 100%;
+    height: 302px;
+    border-radius: 8px;
+  }
+
+  .img-view {
+    transition: 0.4s ease-in-out;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .line {
+    width: 100%;
+    margin: 24px 0 16px 0;
+    border: 1px solid #2e405a;
+  }
+
+  .info-crypto {
+    display: flex;
+    justify-content: space-between;
+
+    img {
+      margin-right: 8px;
+    }
+  }
+
+  .value-wrapper {
+    display: flex;
+    align-items: center;
+
+    .value {
+      color: $colorCyan;
+      font-weight: 600;
+    }
+
+    .days-to-left {
+      color: $fontColorSoftBlue;
+      font-weight: 300;
+    }
+  }
+
+  .description {
+    color: $fontColorSoftBlue;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 24px;
+  }
+
+  .user-info {
+    display: flex;
+    align-items: center;
+
+    img {
+      border: 1px solid #fff;
+      border-radius: 50%;
+    }
+
+    span {
+      margin-left: 16px;
+      color: $fontColorSoftBlue;
+    }
+
+    p {
+      color: #fff;
+      cursor: pointer;
+
+      &:hover {
+        color: $colorCyan;
+        transition: all 0.2s ease-in-out;
+      }
+    }
+  }
+}
