@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Kumbh Sans', sans-serif;
+}
+
+body {
+  background: #1e213f;
+}
+
+.container {
+  margin: 3rem 0;
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container .timer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 4rem 0;
+  background: linear-gradient(315deg, #2e325a 0%, #0e112a 100%);
+  -webkit-box-shadow: -50px -50px 100px #272c5a, 50px 50px 100px #121530;
+          box-shadow: -50px -50px 100px #272c5a, 50px 50px 100px #121530;
+  width: 98%;
+  max-width: 410px;
+  height: 410px;
+  border-radius: 50%;
+  color: #d7e0ff;
+  font-weight: 700;
+}
+
+.container .timer .progress-time {
+  font-size: 100px;
+}
+
+.container .timer .pause {
+  letter-spacing: 15px;
+}
+/*# sourceMappingURL=styles.css.map */
