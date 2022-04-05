@@ -6,32 +6,255 @@
   font-family: 'IBM Plex Sans', sans-serif;
 }
 
+body {
+  background: url("./assets/bg-main-desktop.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container,
+footer {
+  max-width: 1110px;
+  margin: 0 auto;
+}
+
 header {
-  padding: 1.3rem;
+  padding: 1.5rem;
 }
 
 header .img-bg-header {
   position: absolute;
-  right: 0;
-  top: -20px;
-}
-
-header h1 {
-  font-size: 40px;
+  right: 7rem;
+  top: -3rem;
 }
 
 header .img-logo {
+  margin: 40px 0 127px 0;
+}
+
+.hero {
+  color: #191826;
+  padding: 1.5rem;
+}
+
+.hero p {
+  font-size: 20px;
+  line-height: 34px;
+}
+
+.hero h1 {
+  font-size: 88px;
+  line-height: 88px;
   margin-bottom: 40px;
 }
 
-@media only screen and (max-width: 720px) {
+.content {
+  background-color: #191826;
+  margin: 20rem 0;
+  border-radius: 12px;
+  height: 600px;
+  position: relative;
+}
+
+.content .img-background-content {
+  position: absolute;
+  top: -3rem;
+  left: 29%;
+  z-index: 1;
+}
+
+.content .img-mobile-device {
+  max-width: 312px;
+  margin: -15rem 0 0 5rem;
+  z-index: 2;
+  position: absolute;
+}
+
+.content .info-plan-premium {
+  position: absolute;
+  z-index: 3;
+  padding: 3.5rem;
+  background: #fa7453;
+  max-width: 446px;
+  border-radius: 12px;
+  position: absolute;
+  right: 5rem;
+  top: 7rem;
+}
+
+.content .info-plan-premium h3 {
+  font-size: 40px;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.content .info-plan-premium p {
+  font-size: 20px;
+  color: #fcfaf9;
+  line-height: 34px;
+}
+
+.content .info-plan-premium .price-subscription {
+  margin: 2.5rem 0;
+}
+
+.content .info-plan-premium .price-subscription span {
+  font-size: 65px;
+  font-weight: bold;
+}
+
+.content .btn-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.content .btn-wrapper button {
+  margin-bottom: 1.2rem;
+  height: 59px;
+  border-radius: 12px;
+  border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 18px;
+  font-weight: 760;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.content .btn-wrapper button img {
+  margin-right: 0.5rem;
+}
+
+.content .btn-wrapper .btn-download-app-apple {
+  background: #191826;
+  color: #fcfaf9;
+}
+
+.content .btn-wrapper .btn-download-app-apple:hover {
+  background: #66e2dc;
+}
+
+.content .btn-wrapper .btn-download-app-android:hover {
+  background: #ffb964;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 4rem;
+  padding: 1.5rem;
+}
+
+footer p {
+  color: #191826;
+  line-height: 26px;
+}
+
+footer .logo {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+footer .social-media-wrapper img {
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1510px) {
+  .hero {
+    max-width: 800px;
+  }
+  .hero h1 {
+    font-size: 64px;
+  }
+  .img-bg-header {
+    right: 0 !important;
+  }
+}
+
+@media only screen and (max-width: 968px) {
   .img-bg-header {
     display: none;
   }
-  header {
+  .container {
     background: url("./assets/bg-main-mobile.png");
     background-repeat: no-repeat;
     background-size: cover;
+  }
+  footer {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  footer img,
+  footer p {
+    margin-top: 1rem;
+  }
+}
+
+@media only screen and (max-width: 630px) {
+  footer {
+    margin-top: 23rem;
+  }
+  header .img-logo {
+    margin: 0;
+  }
+  .hero h1 {
+    font-size: 40px;
+    line-height: 48px;
+  }
+  .hero p {
+    font-size: 16px;
+  }
+  .content {
+    margin-top: 7rem;
+  }
+  .content .info-plan-premium {
+    right: 0;
+    top: 23rem;
+    padding: 2rem;
+  }
+  .content .info-plan-premium h3 {
+    font-size: 32px;
+  }
+  .content .info-plan-premium p {
+    font-size: 18px;
+  }
+  .content .img-mobile-device {
+    width: 209px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -6rem;
+    left: 0;
+    right: 0;
+    top: 0;
+    text-align: center;
+  }
+  .content .img-background-content {
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 60%;
+    text-align: center;
   }
 }
 /*# sourceMappingURL=styles.css.map */

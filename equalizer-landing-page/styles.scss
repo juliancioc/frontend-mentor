@@ -6,32 +6,252 @@
   font-family: 'IBM Plex Sans', sans-serif;
 }
 
+body {
+  background: url('./assets/bg-main-desktop.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container,
+footer {
+  max-width: 1110px;
+  margin: 0 auto;
+}
+
 header {
-  padding: 1.3rem;
+  padding: 1.5rem;
 
   .img-bg-header {
     position: absolute;
-    right: 0;
-    top: -20px;
-  }
-
-  h1 {
-    font-size: 40px;
+    right: 7rem;
+    top: -3rem;
   }
 
   .img-logo {
+    margin: 40px 0 127px 0;
+  }
+}
+
+.hero {
+  color: #191826;
+  padding: 1.5rem;
+
+  p {
+    font-size: 20px;
+    line-height: 34px;
+  }
+
+  h1 {
+    font-size: 88px;
+    line-height: 88px;
     margin-bottom: 40px;
   }
 }
 
-@media only screen and(max-width: 720px) {
+.content {
+  background-color: #191826;
+  margin: 20rem 0;
+  border-radius: 12px;
+  height: 600px;
+  position: relative;
+
+  .img-background-content {
+    position: absolute;
+    top: -3rem;
+    left: 29%;
+    z-index: 1;
+  }
+
+  .img-mobile-device {
+    max-width: 312px;
+    margin: -15rem 0 0 5rem;
+    z-index: 2;
+    position: absolute;
+  }
+
+  .info-plan-premium {
+    position: absolute;
+    z-index: 3;
+    padding: 3.5rem;
+    background: #fa7453;
+    max-width: 446px;
+    border-radius: 12px;
+    position: absolute;
+    right: 5rem;
+    top: 7rem;
+
+    h3 {
+      font-size: 40px;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 20px;
+      color: #fcfaf9;
+      line-height: 34px;
+    }
+
+    .price-subscription {
+      margin: 2.5rem 0;
+
+      span {
+        font-size: 65px;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .btn-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    button {
+      margin-bottom: 1.2rem;
+      height: 59px;
+      border-radius: 12px;
+      border: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 18px;
+      font-weight: 760;
+      transition: 0.3s ease-in-out;
+      cursor: pointer;
+
+      img {
+        margin-right: 0.5rem;
+      }
+    }
+
+    .btn-download-app-apple {
+      background: #191826;
+      color: #fcfaf9;
+
+      &:hover {
+        background: #66e2dc;
+      }
+    }
+
+    .btn-download-app-android:hover {
+      background: #ffb964;
+    }
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+  padding: 1.5rem;
+
+  p {
+    color: #191826;
+    line-height: 26px;
+  }
+
+  .logo {
+    height: fit-content;
+  }
+
+  .social-media-wrapper img {
+    margin-right: 1rem;
+    cursor: pointer;
+  }
+}
+
+@media only screen and(max-width: 1510px) {
+  .hero {
+    max-width: 800px;
+
+    h1 {
+      font-size: 64px;
+    }
+  }
+
+  .img-bg-header {
+    right: 0 !important;
+  }
+}
+
+@media only screen and(max-width: 968px) {
   .img-bg-header {
     display: none;
   }
 
-  header {
+  .container {
     background: url('./assets/bg-main-mobile.png');
     background-repeat: no-repeat;
     background-size: cover;
+  }
+
+  footer {
+    flex-wrap: wrap;
+
+    img,
+    p {
+      margin-top: 1rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 630px) {
+  footer {
+    margin-top: 23rem;
+  }
+
+  header {
+    .img-logo {
+      margin: 0;
+    }
+  }
+  .hero {
+    h1 {
+      font-size: 40px;
+      line-height: 48px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+  }
+
+  .content {
+    margin-top: 7rem;
+
+    .info-plan-premium {
+      right: 0;
+      top: 23rem;
+      padding: 2rem;
+
+      h3 {
+        font-size: 32px;
+      }
+
+      p {
+        font-size: 18px;
+      }
+    }
+
+    .img-mobile-device {
+      width: 209px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: -6rem;
+      left: 0;
+      right: 0;
+      top: 0;
+      text-align: center;
+    }
+
+    .img-background-content {
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      top: 0;
+      width: 60%;
+      text-align: center;
+    }
   }
 }
