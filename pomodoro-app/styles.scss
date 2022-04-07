@@ -14,20 +14,6 @@ body {
   background: $primaryColor;
 }
 
-.progress-ring {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.progress-ring__circle {
-  transition: 0.5s;
-  transform: rotate(-90deg);
-  transform-origin: 50% 50%;
-  stroke: #f87070;
-}
-
 .container {
   margin: 3rem 0;
   display: flex;
@@ -51,6 +37,25 @@ body {
     color: #d7e0ff;
     font-weight: 700;
 
+    p {
+      z-index: 2;
+    }
+
+    .progress-ring {
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .progress-ring__circle {
+      transition: 0.5s;
+      transform: rotate(-90deg);
+      transform-origin: 50% 50%;
+      stroke: #f87070;
+    }
+
     .progress-time {
       font-size: 100px;
     }
@@ -59,12 +64,21 @@ body {
       width: 21rem;
       height: 21rem;
       border-radius: 50%;
-      border: .8rem solid #F87070;
+      border: 0.8rem solid #f87070;
       position: absolute;
     }
 
     .pause {
       letter-spacing: 15px;
+    }
+
+    .background {
+      background: #161932;
+      width: 360px;
+      height: 360px;
+      position: absolute;
+      border-radius: 50%;
+      z-index: 0;
     }
   }
 }

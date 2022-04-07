@@ -11,24 +11,6 @@ body {
   background: #1e213f;
 }
 
-.progress-ring {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
-
-.progress-ring__circle {
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
-  -webkit-transform-origin: 50% 50%;
-          transform-origin: 50% 50%;
-  stroke: #f87070;
-}
-
 .container {
   margin: 3rem 0;
   display: -webkit-box;
@@ -73,6 +55,29 @@ body {
   font-weight: 700;
 }
 
+.container .timer p {
+  z-index: 2;
+}
+
+.container .timer .progress-ring {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.container .timer .progress-ring__circle {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  stroke: #f87070;
+}
+
 .container .timer .progress-time {
   font-size: 100px;
 }
@@ -81,11 +86,20 @@ body {
   width: 21rem;
   height: 21rem;
   border-radius: 50%;
-  border: .8rem solid #F87070;
+  border: 0.8rem solid #f87070;
   position: absolute;
 }
 
 .container .timer .pause {
   letter-spacing: 15px;
+}
+
+.container .timer .background {
+  background: #161932;
+  width: 360px;
+  height: 360px;
+  position: absolute;
+  border-radius: 50%;
+  z-index: 0;
 }
 /*# sourceMappingURL=styles.css.map */
