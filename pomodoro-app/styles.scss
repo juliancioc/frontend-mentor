@@ -14,16 +14,29 @@ body {
   background: $primaryColor;
 }
 
+.progress-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.progress-ring__circle {
+  transition: 0.5s;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+  stroke: #f87070;
+}
+
 .container {
   margin: 3rem 0;
-  width: 100vw;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 
   .timer {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,6 +53,14 @@ body {
 
     .progress-time {
       font-size: 100px;
+    }
+
+    .progress-bar {
+      width: 21rem;
+      height: 21rem;
+      border-radius: 50%;
+      border: .8rem solid #F87070;
+      position: absolute;
     }
 
     .pause {

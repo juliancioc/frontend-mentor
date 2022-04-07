@@ -10,16 +10,19 @@
 </head>
 
 <body>
+
   <main class="container">
     <img src="./assets/logo.svg" alt="Logo">
 
     <div class="tabs-options-time">
-      <button>pomodoro</button>
+      <button class="start-pomodoro">pomodoro</button>
       <button>short break</button>
       <button>long break</button>
     </div>
-
     <div class="timer">
+      <svg class="progress-ring" height="320" width="320">
+        <circle class="progress-ring__circle" stroke-width="8" fill="transparent" r="150" cx="160" cy="160" />
+      </svg>
       <p class="progress-time">17:59</p>
       <p class="pause">PAUSE</p>
     </div>
