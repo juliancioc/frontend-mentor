@@ -21,6 +21,35 @@ body {
   align-items: center;
   flex-direction: column;
 
+  .tabs-options-time {
+    margin: 30px 0;
+    background: #161932;
+    border-radius: 31px;
+    display: flex;
+    width: 90%;
+    max-width: 373px;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2px;
+
+    button {
+      color: #d7e0ff;
+      background: #161932;
+      border: none;
+      padding: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      border-radius: 27px;
+      width: 120px;
+      margin: 4px;
+    }
+
+    .active {
+      background: #f87070;
+      color: #1e213f;
+    }
+  }
+
   .timer {
     position: relative;
     display: flex;
@@ -50,10 +79,10 @@ body {
     }
 
     .progress-ring__circle {
-      transition: 0.5s;
       transform: rotate(-90deg);
       transform-origin: 50% 50%;
       stroke: #f87070;
+      stroke-linecap: round;
     }
 
     .progress-time {
@@ -68,8 +97,10 @@ body {
       position: absolute;
     }
 
-    .pause {
+    .time-control-pomodoro {
       letter-spacing: 15px;
+      margin-top: 12px;
+      cursor: pointer;
     }
 
     .background {

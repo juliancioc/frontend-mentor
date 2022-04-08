@@ -28,6 +28,40 @@ body {
           flex-direction: column;
 }
 
+.container .tabs-options-time {
+  margin: 30px 0;
+  background: #161932;
+  border-radius: 31px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 90%;
+  max-width: 373px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2px;
+}
+
+.container .tabs-options-time button {
+  color: #d7e0ff;
+  background: #161932;
+  border: none;
+  padding: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 27px;
+  width: 120px;
+  margin: 4px;
+}
+
+.container .tabs-options-time .active {
+  background: #f87070;
+  color: #1e213f;
+}
+
 .container .timer {
   position: relative;
   display: -webkit-box;
@@ -69,13 +103,12 @@ body {
 }
 
 .container .timer .progress-ring__circle {
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
   -webkit-transform-origin: 50% 50%;
           transform-origin: 50% 50%;
   stroke: #f87070;
+  stroke-linecap: round;
 }
 
 .container .timer .progress-time {
@@ -90,8 +123,10 @@ body {
   position: absolute;
 }
 
-.container .timer .pause {
+.container .timer .time-control-pomodoro {
   letter-spacing: 15px;
+  margin-top: 12px;
+  cursor: pointer;
 }
 
 .container .timer .background {
