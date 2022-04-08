@@ -1,7 +1,7 @@
 const startEl = document.querySelector(".time-control-pomodoro")
-const btnStartPomodoroEl = document.querySelector(".start-pomodoro")
-const btnStartShortBreakEl = document.querySelector(".start-short-break")
-const btnStartLongBreakEl = document.querySelector(".start-long-break")
+const btnSelectPomodoroEl = document.querySelector(".select-pomodoro")
+const btnSelectShortBreakEl = document.querySelector(".select-short-break")
+const btnSelectLongBreakEl = document.querySelector(".select-long-break")
 const secondsTextEl = document.querySelector(".seconds")
 const minutesTextEl = document.querySelector(".minutes")
 
@@ -10,7 +10,7 @@ const radius = circle.r.baseVal.value;
 const circumference = radius * 2 * Math.PI;
 
 let perc, initial, totalSecs, seconds, secondsToShow;
-let mins = 25
+let mins = 24
 let timeoutId = 0
 
 circle.style.strokeDasharray = circumference;
@@ -30,20 +30,20 @@ function decrementTime() {
   if (mins === 0 && secondsToShow === 0) {
     secondsTextEl.innerHTM = '00';
     minutesTextEl.innerHTML = 25
-    return
-  }
-  secondsTextEl.innerHTML = secondsToShow < 10 ? `0${secondsToShow}` : secondsToShow
-  perc = Math.ceil(((60 - seconds) / 60) * 100)
+  } else {
+    secondsTextEl.innerHTML = secondsToShow < 10 ? `0${secondsToShow}` : secondsToShow
+    perc = Math.ceil(((60 - seconds) / 60) * 100)
 
-  if (secondsToShow === 0) {
-    secondsToShow = 60
-    decrementMinutes()
-  }
+    if (secondsToShow === 0) {
+      secondsToShow = 60
+      decrementMinutes()
+    }
 
-  timeoutId = window.setTimeout("decrementTime()", 1000);
-  setProgress(perc)
-  seconds--
-  secondsToShow--
+    timeoutId = window.setTimeout("decrementTime()", 1000);
+    setProgress(perc)
+    seconds--
+    secondsToShow--
+  }
 }
 
 startEl.addEventListener("click", () => {
@@ -51,15 +51,19 @@ startEl.addEventListener("click", () => {
 
   if (currentStatus === 'PAUSE') {
     clearTimeout(timeoutId)
-    startEl.innerHTML = 'START'
+    startEl.innerHTML = 'CONTINUE'
   } else if (currentStatus === 'START') {
     setTimeout(decrementTime, 60)
 
     startEl.innerHTML = 'PAUSE'
     circle.style.transition = '0.5s'
-    minutesTextEl.innerHTML = mins - 1
+    minutesTextEl.innerHTML = mins
+
     seconds = 59;
     secondsToShow = 59
+  } else if (currentStatus === 'CONTINUE') {
+    setTimeout(decrementTime, seconds)
+    startEl.innerHTML = 'PAUSE'
   }
 })
 
@@ -67,30 +71,30 @@ function handleRemoveBackgroundTabs(element) {
   element.classList.remove("active")
 }
 
-btnStartPomodoroEl.addEventListener("click", () => {
+btnSelectPomodoroEl.addEventListener("click", () => {
   mins = 25
   minutesTextEl.innerHTML = mins
-  handleRemoveBackgroundTabs(btnStartShortBreakEl)
-  handleRemoveBackgroundTabs(btnStartLongBreakEl)
+  handleRemoveBackgroundTabs(btnSelectShortBreakEl)
+  handleRemoveBackgroundTabs(btnSelectLongBreakEl)
 
-  btnStartPomodoroEl.classList.add('active')
+  btnSelectPomodoroEl.classList.add('active')
 })
 
-btnStartShortBreakEl.addEventListener("click", () => {
+btnSelectShortBreakEl.addEventListener("click", () => {
   mins = 5
   minutesTextEl.innerHTML = mins
-  handleRemoveBackgroundTabs(btnStartPomodoroEl)
-  handleRemoveBackgroundTabs(btnStartLongBreakEl)
+  handleRemoveBackgroundTabs(btnSelectPomodoroEl)
+  handleRemoveBackgroundTabs(btnSelectLongBreakEl)
 
-  btnStartShortBreakEl.classList.add("active")
+  btnSelectShortBreakEl.classList.add("active")
 })
 
-btnStartLongBreakEl.addEventListener("click", () => {
+btnSelectLongBreakEl.addEventListener("click", () => {
   mins = 10
   minutesTextEl.innerHTML = mins
-  handleRemoveBackgroundTabs(btnStartPomodoroEl)
-  handleRemoveBackgroundTabs(btnStartShortBreakEl)
+  handleRemoveBackgroundTabs(btnSelectPomodoroEl)
+  handleRemoveBackgroundTabs(btnSelectShortBreakEl)
 
-  btnStartLongBreakEl.classList.add("active")
+  btnSelectLongBreakEl.classList.add("active")
 })
 
