@@ -26,7 +26,7 @@ function decrementMinutes() {
 }
 
 function decrementTime() {
-  if(mins === 0 && secondsToShow === 0) {
+  if (mins === 0 && secondsToShow === 0) {
     secondsTextEl.innerHTM = '0';
     minutesTextEl.innerHTML = 25
   }
