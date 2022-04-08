@@ -10,7 +10,8 @@ const radius = circle.r.baseVal.value;
 const circumference = radius * 2 * Math.PI;
 
 let perc, initial, totalSecs, seconds, secondsToShow;
-let mins = 24
+let mins = 25
+let timeoutId = 0
 
 circle.style.strokeDasharray = circumference;
 circle.style.strokeDashoffset = circumference;
@@ -27,7 +28,7 @@ function decrementMinutes() {
 
 function decrementTime() {
   if (mins === 0 && secondsToShow === 0) {
-    secondsTextEl.innerHTM = '0';
+    secondsTextEl.innerHTM = '00';
     minutesTextEl.innerHTML = 25
     return
   }
@@ -39,18 +40,27 @@ function decrementTime() {
     decrementMinutes()
   }
 
-  window.setTimeout("decrementTime()", 1000);
+  timeoutId = window.setTimeout("decrementTime()", 1000);
   setProgress(perc)
   seconds--
   secondsToShow--
 }
 
 startEl.addEventListener("click", () => {
-  circle.style.transition = '0.5s'
-  minutesTextEl.innerHTML = mins
-  seconds = 59;
-  secondsToShow = 59
-  setTimeout(decrementTime, 60)
+  const currentStatus = startEl.innerHTML
+
+  if (currentStatus === 'PAUSE') {
+    clearTimeout(timeoutId)
+    startEl.innerHTML = 'START'
+  } else if (currentStatus === 'START') {
+    setTimeout(decrementTime, 60)
+
+    startEl.innerHTML = 'PAUSE'
+    circle.style.transition = '0.5s'
+    minutesTextEl.innerHTML = mins - 1
+    seconds = 59;
+    secondsToShow = 59
+  }
 })
 
 function handleRemoveBackgroundTabs(element) {
@@ -59,7 +69,7 @@ function handleRemoveBackgroundTabs(element) {
 
 btnStartPomodoroEl.addEventListener("click", () => {
   mins = 25
-
+  minutesTextEl.innerHTML = mins
   handleRemoveBackgroundTabs(btnStartShortBreakEl)
   handleRemoveBackgroundTabs(btnStartLongBreakEl)
 
@@ -68,7 +78,7 @@ btnStartPomodoroEl.addEventListener("click", () => {
 
 btnStartShortBreakEl.addEventListener("click", () => {
   mins = 5
-
+  minutesTextEl.innerHTML = mins
   handleRemoveBackgroundTabs(btnStartPomodoroEl)
   handleRemoveBackgroundTabs(btnStartLongBreakEl)
 
@@ -77,7 +87,7 @@ btnStartShortBreakEl.addEventListener("click", () => {
 
 btnStartLongBreakEl.addEventListener("click", () => {
   mins = 10
-
+  minutesTextEl.innerHTML = mins
   handleRemoveBackgroundTabs(btnStartPomodoroEl)
   handleRemoveBackgroundTabs(btnStartShortBreakEl)
 
