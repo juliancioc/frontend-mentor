@@ -29,6 +29,7 @@ function decrementTime() {
   if (mins === 0 && secondsToShow === 0) {
     secondsTextEl.innerHTM = '0';
     minutesTextEl.innerHTML = 25
+    return
   }
   secondsTextEl.innerHTML = secondsToShow < 10 ? `0${secondsToShow}` : secondsToShow
   perc = Math.ceil(((60 - seconds) / 60) * 100)
@@ -57,6 +58,8 @@ function handleRemoveBackgroundTabs(element) {
 }
 
 btnStartPomodoroEl.addEventListener("click", () => {
+  mins = 25
+
   handleRemoveBackgroundTabs(btnStartShortBreakEl)
   handleRemoveBackgroundTabs(btnStartLongBreakEl)
 
@@ -64,6 +67,8 @@ btnStartPomodoroEl.addEventListener("click", () => {
 })
 
 btnStartShortBreakEl.addEventListener("click", () => {
+  mins = 5
+
   handleRemoveBackgroundTabs(btnStartPomodoroEl)
   handleRemoveBackgroundTabs(btnStartLongBreakEl)
 
@@ -71,6 +76,8 @@ btnStartShortBreakEl.addEventListener("click", () => {
 })
 
 btnStartLongBreakEl.addEventListener("click", () => {
+  mins = 10
+
   handleRemoveBackgroundTabs(btnStartPomodoroEl)
   handleRemoveBackgroundTabs(btnStartShortBreakEl)
 
