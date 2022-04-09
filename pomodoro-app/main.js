@@ -42,7 +42,7 @@ function decrementTime() {
       decrementMinutes()
     }
 
-    timeoutId = window.setTimeout("decrementTime()", 10);
+    timeoutId = window.setTimeout("decrementTime()", 1000);
     setProgress(perc)
     seconds--
     secondsToShow--
