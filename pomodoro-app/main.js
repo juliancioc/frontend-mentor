@@ -1,3 +1,5 @@
+let audioEffect = new Audio('../pomodoro-app/assets/success.mp3')
+
 const startEl = document.querySelector(".time-control-pomodoro")
 const btnSelectPomodoroEl = document.querySelector(".select-pomodoro")
 const btnSelectShortBreakEl = document.querySelector(".select-short-break")
@@ -28,6 +30,7 @@ function decrementMinutes() {
 
 function decrementTime() {
   if (mins === 0 && secondsToShow === 0) {
+    audioEffect.play()
     secondsTextEl.innerHTML = '00'
     minutesTextEl.innerHTML = 25
   } else {
