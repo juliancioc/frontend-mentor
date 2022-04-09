@@ -1,4 +1,4 @@
-let audioEffect = new Audio('../pomodoro-app/assets/success.mp3')
+let audioEffect = new Audio('../assets/success.mp3')
 
 const startEl = document.querySelector(".time-control-pomodoro")
 const btnSelectPomodoroEl = document.querySelector(".select-pomodoro")
