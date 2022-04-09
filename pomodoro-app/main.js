@@ -9,7 +9,7 @@ const circle = document.querySelector(".progress-ring__circle");
 const radius = circle.r.baseVal.value;
 const circumference = radius * 2 * Math.PI;
 
-let perc, initial, totalSecs, seconds, secondsToShow;
+let perc, initial, totalSecs, seconds, secondsToShow, minsTotal;
 let mins = 24
 let timeoutId = 0
 
@@ -28,18 +28,18 @@ function decrementMinutes() {
 
 function decrementTime() {
   if (mins === 0 && secondsToShow === 0) {
-    secondsTextEl.innerHTM = '00';
+    secondsTextEl.innerHTML = '00'
     minutesTextEl.innerHTML = 25
   } else {
     secondsTextEl.innerHTML = secondsToShow < 10 ? `0${secondsToShow}` : secondsToShow
-    perc = Math.ceil(((60 - seconds) / 60) * 100)
+    perc = Math.ceil(((minsTotal - mins) / minsTotal) * 100)
 
     if (secondsToShow === 0) {
       secondsToShow = 60
       decrementMinutes()
     }
 
-    timeoutId = window.setTimeout("decrementTime()", 1000);
+    timeoutId = window.setTimeout("decrementTime()", 10);
     setProgress(perc)
     seconds--
     secondsToShow--
@@ -48,6 +48,7 @@ function decrementTime() {
 
 startEl.addEventListener("click", () => {
   const currentStatus = startEl.innerHTML
+  minsTotal = mins;
 
   if (currentStatus === 'PAUSE') {
     clearTimeout(timeoutId)
