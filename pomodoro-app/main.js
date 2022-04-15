@@ -51,6 +51,7 @@ function decrementTime() {
 
 startEl.addEventListener("click", () => {
   const currentStatus = startEl.innerHTML
+  
   minsTotal = mins;
 
   if (currentStatus === 'PAUSE') {
@@ -58,7 +59,6 @@ startEl.addEventListener("click", () => {
     startEl.innerHTML = 'CONTINUE'
   } else if (currentStatus === 'START') {
     setTimeout(decrementTime, 60)
-
     startEl.innerHTML = 'PAUSE'
     circle.style.transition = '0.5s'
     minutesTextEl.innerHTML = mins
@@ -76,6 +76,12 @@ function handleRemoveBackgroundTabs(element) {
 }
 
 btnSelectPomodoroEl.addEventListener("click", () => {
+  const currentStatus = startEl.innerHTML
+
+  if (currentStatus === 'PAUSE') {
+    return
+  }
+
   mins = 25
   minutesTextEl.innerHTML = mins
   handleRemoveBackgroundTabs(btnSelectShortBreakEl)
@@ -85,8 +91,14 @@ btnSelectPomodoroEl.addEventListener("click", () => {
 })
 
 btnSelectShortBreakEl.addEventListener("click", () => {
-  mins = 5
-  minutesTextEl.innerHTML = mins
+  const currentStatus = startEl.innerHTML
+
+  if (currentStatus === 'PAUSE') {
+    return
+  }
+
+  mins = 4
+  minutesTextEl.innerHTML = 5
   handleRemoveBackgroundTabs(btnSelectPomodoroEl)
   handleRemoveBackgroundTabs(btnSelectLongBreakEl)
 
@@ -94,8 +106,14 @@ btnSelectShortBreakEl.addEventListener("click", () => {
 })
 
 btnSelectLongBreakEl.addEventListener("click", () => {
-  mins = 10
-  minutesTextEl.innerHTML = mins
+  const currentStatus = startEl.innerHTML
+
+  if (currentStatus === 'PAUSE') {
+    return
+  }
+
+  mins = 9
+  minutesTextEl.innerHTML = 10
   handleRemoveBackgroundTabs(btnSelectPomodoroEl)
   handleRemoveBackgroundTabs(btnSelectShortBreakEl)
 
