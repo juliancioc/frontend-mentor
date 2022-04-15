@@ -35,7 +35,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 90%;
+  width: 91%;
   max-width: 373px;
   -ms-flex-pack: distribute;
       justify-content: space-around;
@@ -136,5 +136,19 @@ body {
   position: absolute;
   border-radius: 50%;
   z-index: 0;
+}
+
+@media only screen and (max-width: 469px) {
+  .container .background {
+    width: 320px !important;
+    height: 320px !important;
+  }
+  .container .timer {
+    width: 344px !important;
+    height: 344px !important;
+  }
+  .container .timer .progress-time {
+    font-size: 4rem;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

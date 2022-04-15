@@ -33,6 +33,7 @@ function decrementTime() {
     audioEffect.play()
     secondsTextEl.innerHTML = '00'
     minutesTextEl.innerHTML = 25
+    startEl.innerHTML = 'START'
   } else {
     secondsTextEl.innerHTML = secondsToShow < 10 ? `0${secondsToShow}` : secondsToShow
     perc = Math.ceil(((minsTotal - mins) / minsTotal) * 100)
@@ -78,7 +79,7 @@ function handleRemoveBackgroundTabs(element) {
 btnSelectPomodoroEl.addEventListener("click", () => {
   const currentStatus = startEl.innerHTML
 
-  if (currentStatus === 'PAUSE') {
+  if (currentStatus !== 'START') {
     return
   }
 
@@ -93,7 +94,7 @@ btnSelectPomodoroEl.addEventListener("click", () => {
 btnSelectShortBreakEl.addEventListener("click", () => {
   const currentStatus = startEl.innerHTML
 
-  if (currentStatus === 'PAUSE') {
+  if (currentStatus!== 'START') {
     return
   }
 
@@ -108,7 +109,7 @@ btnSelectShortBreakEl.addEventListener("click", () => {
 btnSelectLongBreakEl.addEventListener("click", () => {
   const currentStatus = startEl.innerHTML
 
-  if (currentStatus === 'PAUSE') {
+  if (currentStatus !== 'START') {
     return
   }
 
