@@ -6,6 +6,7 @@ const btnSelectShortBreakEl = document.querySelector(".select-short-break")
 const btnSelectLongBreakEl = document.querySelector(".select-long-break")
 const secondsTextEl = document.querySelector(".seconds")
 const minutesTextEl = document.querySelector(".minutes")
+const clickSettings = document.querySelector('.settings')
 
 const circle = document.querySelector(".progress-ring__circle");
 const radius = circle.r.baseVal.value;
@@ -17,6 +18,10 @@ let timeoutId = 0
 
 circle.style.strokeDasharray = circumference;
 circle.style.strokeDashoffset = circumference;
+
+clickSettings.addEventListener('click', () => {
+  
+});
 
 function setProgress(percent) {
   const offset = circumference - (percent / 100) * circumference;

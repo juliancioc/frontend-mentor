@@ -113,6 +113,110 @@ body {
     }
   }
 
+  .modal-settings {
+    background: #ffffff;
+    border-radius: 25px;
+    width: 100%;
+    max-width: 540px;
+    height: auto;
+    color: #161932;
+
+    hr {
+      border: 0.02rem solid #e3e1e1;
+    }
+
+    .subtitle {
+      font-size: 13px;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 5px;
+      margin: 22px 0;
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      padding: 2rem;
+
+      .title-modal {
+        font-size: 26px;
+        font-weight: 700;
+      }
+
+      .close-modal {
+        color: #1e213f;
+        opacity: 0.5;
+        font-weight: bold;
+      }
+    }
+
+    .modal-body {
+      padding: 0 2rem;
+
+      .inputs-time {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 24px;
+
+        .inputs-wrappers {
+          p {
+            opacity: 0.4;
+            font-weight: 700;
+            font-size: 12px;
+          }
+
+          input {
+            background: #eff1fa;
+            border-radius: 10px;
+            border: none;
+            width: 140px;
+            height: 48px;
+            margin-top: 8px;
+            padding: 10px 15px;
+            font-weight: 700;
+            font-size: 14px;
+          }
+        }
+      }
+
+      .font {
+        display: flex;
+        justify-content: space-between;
+        border-top: 0.1rem solid #e3e1e1;
+        border-bottom: 0.1rem solid #e3e1e1;
+        padding: 16px 0;
+
+        .font-options {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .active {
+            background: #161932 !important;
+            color: #fff;
+          }
+
+          .option {
+            background-color: #EFF1FA;
+            border-radius: 50%;
+            margin-left: 16px;
+            height: 40px;
+            width: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
+  .settings,
+  .close-modal {
+    cursor: pointer;
+  }
+
   @media only screen and(max-width: 469px) {
     .background {
       width: 320px !important;
@@ -129,6 +233,3 @@ body {
     }
   }
 }
-
-
-
