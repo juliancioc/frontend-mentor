@@ -197,7 +197,7 @@ body {
           }
 
           .option {
-            background-color: #EFF1FA;
+            background-color: #eff1fa;
             border-radius: 50%;
             margin-left: 16px;
             height: 40px;
@@ -207,6 +207,51 @@ body {
             align-items: center;
             cursor: pointer;
           }
+        }
+      }
+
+      .colors {
+        display: flex;
+        justify-content: space-between;
+
+        .colors-options-wrapper {
+          position: relative;
+          display: flex;
+          justify-content: space-between;
+          margin: 22px 0;
+        }
+
+        .option-color {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          margin-left: 16px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .check-icon {
+          background: url('./assets/check-icon.svg');
+          background-repeat: no-repeat;
+          background-size: cover;
+          width: 18px;
+          height: 14px;
+          position: absolute;
+          left: 1.7rem;
+          top: 0.8rem;
+        }
+
+        .color-one {
+          background-color: #f87070;
+        }
+
+        .color-two {
+          background-color: #70f3f8;
+        }
+
+        .color-three {
+          background-color: #d881f8;
         }
       }
     }

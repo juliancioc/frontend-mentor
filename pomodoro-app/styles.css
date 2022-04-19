@@ -242,7 +242,7 @@ body {
 }
 
 .container .modal-settings .modal-body .font .font-options .option {
-  background-color: #EFF1FA;
+  background-color: #eff1fa;
   border-radius: 50%;
   margin-left: 16px;
   height: 40px;
@@ -257,6 +257,65 @@ body {
       -ms-flex-align: center;
           align-items: center;
   cursor: pointer;
+}
+
+.container .modal-settings .modal-body .colors {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container .modal-settings .modal-body .colors .colors-options-wrapper {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 22px 0;
+}
+
+.container .modal-settings .modal-body .colors .option-color {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-left: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container .modal-settings .modal-body .colors .check-icon {
+  background: url("./assets/check-icon.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 18px;
+  height: 14px;
+  position: absolute;
+  left: 1.7rem;
+  top: 0.8rem;
+}
+
+.container .modal-settings .modal-body .colors .color-one {
+  background-color: #f87070;
+}
+
+.container .modal-settings .modal-body .colors .color-two {
+  background-color: #70f3f8;
+}
+
+.container .modal-settings .modal-body .colors .color-three {
+  background-color: #d881f8;
 }
 
 .container .settings,
