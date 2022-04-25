@@ -14,6 +14,10 @@ body {
   background: $primaryColor;
 }
 
+button {
+  cursor: pointer;
+}
+
 .container {
   margin: 3rem 0;
   display: flex;
@@ -213,6 +217,7 @@ body {
       .colors {
         display: flex;
         justify-content: space-between;
+        margin-bottom: 15px;
 
         .colors-options-wrapper {
           position: relative;
@@ -253,6 +258,24 @@ body {
         .color-three {
           background-color: #d881f8;
         }
+      }
+    }
+
+    .wrapper-btn {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: -26px;
+
+      .btn-apply {
+        background: #F87070;
+        width: 140px;
+        height: 53px;
+        border: none;
+        color: #fff;
+        border-radius: 26.5px;
+        font-weight: 700;
+        font-size: 16px;
       }
     }
   }

@@ -6,6 +6,11 @@ const btnSelectShortBreakEl = document.querySelector(".select-short-break")
 const btnSelectLongBreakEl = document.querySelector(".select-long-break")
 const secondsTextEl = document.querySelector(".seconds")
 const minutesTextEl = document.querySelector(".minutes")
+
+const inputPomodoroTimeEl = document.getElementById("#pomodoro-time")
+const inputShortBreakTimeEl = document.getElementById("#short-break-time")
+const inputLongBreakTimeEl = document.getElementById("#long-break-time")
+const btnApplySettingsEl = document.getElementById("#btn-apply-settings")
 const clickSettings = document.querySelector('.settings')
 
 const circle = document.querySelector(".progress-ring__circle");
@@ -126,3 +131,4 @@ btnSelectLongBreakEl.addEventListener("click", () => {
   btnSelectLongBreakEl.classList.add("active")
 })
 
+btnApplySettingsEl.addEventListener("click")

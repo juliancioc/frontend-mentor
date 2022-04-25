@@ -11,6 +11,10 @@ body {
   background: #1e213f;
 }
 
+button {
+  cursor: pointer;
+}
+
 .container {
   margin: 3rem 0;
   display: -webkit-box;
@@ -266,6 +270,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin-bottom: 15px;
 }
 
 .container .modal-settings .modal-body .colors .colors-options-wrapper {
@@ -316,6 +321,28 @@ body {
 
 .container .modal-settings .modal-body .colors .color-three {
   background-color: #d881f8;
+}
+
+.container .modal-settings .wrapper-btn {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: -26px;
+}
+
+.container .modal-settings .wrapper-btn .btn-apply {
+  background: #F87070;
+  width: 140px;
+  height: 53px;
+  border: none;
+  color: #fff;
+  border-radius: 26.5px;
+  font-weight: 700;
+  font-size: 16px;
 }
 
 .container .settings,
