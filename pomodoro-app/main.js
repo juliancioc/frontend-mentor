@@ -7,10 +7,10 @@ const btnSelectLongBreakEl = document.querySelector(".select-long-break")
 const secondsTextEl = document.querySelector(".seconds")
 const minutesTextEl = document.querySelector(".minutes")
 
-const inputPomodoroTimeEl = document.getElementById("#pomodoro-time")
-const inputShortBreakTimeEl = document.getElementById("#short-break-time")
-const inputLongBreakTimeEl = document.getElementById("#long-break-time")
-const btnApplySettingsEl = document.getElementById("#btn-apply-settings")
+const inputPomodoroTimeEl = document.getElementById("pomodoro-time")
+const inputShortBreakTimeEl = document.getElementById("short-break-time")
+const inputLongBreakTimeEl = document.getElementById("long-break-time")
+const btnApplySettingsEl = document.getElementById("btn-apply-settings")
 const clickSettings = document.querySelector('.settings')
 
 const circle = document.querySelector(".progress-ring__circle");
@@ -18,7 +18,7 @@ const radius = circle.r.baseVal.value;
 const circumference = radius * 2 * Math.PI;
 
 let perc, initial, totalSecs, seconds, secondsToShow, minsTotal;
-let mins = 24
+let mins = 25
 let timeoutId = 0
 
 circle.style.strokeDasharray = circumference;
@@ -104,7 +104,7 @@ btnSelectPomodoroEl.addEventListener("click", () => {
 btnSelectShortBreakEl.addEventListener("click", () => {
   const currentStatus = startEl.innerHTML
 
-  if (currentStatus!== 'START') {
+  if (currentStatus !== 'START') {
     return
   }
 
@@ -131,4 +131,9 @@ btnSelectLongBreakEl.addEventListener("click", () => {
   btnSelectLongBreakEl.classList.add("active")
 })
 
-btnApplySettingsEl.addEventListener("click")
+btnApplySettingsEl.addEventListener("click", () => {
+  const valueInputPomodoro = inputPomodoroTimeEl.value
+  mins = valueInputPomodoro
+  minutesTextEl.innerHTML = valueInputPomodoro
+  console.log('valueInputPomodoro', valueInputPomodoro)
+})
