@@ -1,32 +1,19 @@
 let audioEffect = new Audio('../assets/success.mp3')
 
 const startEl = document.querySelector(".time-control-pomodoro")
-const btnSelectPomodoroEl = document.querySelector(".select-pomodoro")
-const btnSelectShortBreakEl = document.querySelector(".select-short-break")
-const btnSelectLongBreakEl = document.querySelector(".select-long-break")
 const secondsTextEl = document.querySelector(".seconds")
 const minutesTextEl = document.querySelector(".minutes")
-
-const inputPomodoroTimeEl = document.getElementById("pomodoro-time")
-const inputShortBreakTimeEl = document.getElementById("short-break-time")
-const inputLongBreakTimeEl = document.getElementById("long-break-time")
-const btnApplySettingsEl = document.getElementById("btn-apply-settings")
-const clickSettings = document.querySelector('.settings')
 
 const circle = document.querySelector(".progress-ring__circle");
 const radius = circle.r.baseVal.value;
 const circumference = radius * 2 * Math.PI;
 
 let perc, initial, totalSecs, seconds, secondsToShow, minsTotal;
-let mins = 25
+let mins = 24
 let timeoutId = 0
 
 circle.style.strokeDasharray = circumference;
 circle.style.strokeDashoffset = circumference;
-
-clickSettings.addEventListener('click', () => {
-  
-});
 
 function setProgress(percent) {
   const offset = circumference - (percent / 100) * circumference;
@@ -82,58 +69,4 @@ startEl.addEventListener("click", () => {
   }
 })
 
-function handleRemoveBackgroundTabs(element) {
-  element.classList.remove("active")
-}
 
-btnSelectPomodoroEl.addEventListener("click", () => {
-  const currentStatus = startEl.innerHTML
-
-  if (currentStatus !== 'START') {
-    return
-  }
-
-  mins = 25
-  minutesTextEl.innerHTML = mins
-  handleRemoveBackgroundTabs(btnSelectShortBreakEl)
-  handleRemoveBackgroundTabs(btnSelectLongBreakEl)
-
-  btnSelectPomodoroEl.classList.add('active')
-})
-
-btnSelectShortBreakEl.addEventListener("click", () => {
-  const currentStatus = startEl.innerHTML
-
-  if (currentStatus !== 'START') {
-    return
-  }
-
-  mins = 4
-  minutesTextEl.innerHTML = 5
-  handleRemoveBackgroundTabs(btnSelectPomodoroEl)
-  handleRemoveBackgroundTabs(btnSelectLongBreakEl)
-
-  btnSelectShortBreakEl.classList.add("active")
-})
-
-btnSelectLongBreakEl.addEventListener("click", () => {
-  const currentStatus = startEl.innerHTML
-
-  if (currentStatus !== 'START') {
-    return
-  }
-
-  mins = 9
-  minutesTextEl.innerHTML = 10
-  handleRemoveBackgroundTabs(btnSelectPomodoroEl)
-  handleRemoveBackgroundTabs(btnSelectShortBreakEl)
-
-  btnSelectLongBreakEl.classList.add("active")
-})
-
-btnApplySettingsEl.addEventListener("click", () => {
-  const valueInputPomodoro = inputPomodoroTimeEl.value
-  mins = valueInputPomodoro
-  minutesTextEl.innerHTML = valueInputPomodoro
-  console.log('valueInputPomodoro', valueInputPomodoro)
-})

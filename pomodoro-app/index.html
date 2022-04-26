@@ -13,12 +13,6 @@
 
   <main class="container">
     <img src="./assets/logo.svg" alt="Logo">
-
-    <div class="tabs-options-time">
-      <button class="select-pomodoro active">pomodoro</button>
-      <button class="select-short-break">short break</button>
-      <button class="select-long-break">long break</button>
-    </div>
     <div class="timer">
       <svg class="progress-ring" height="340" width="340">
         <circle class="progress-ring__circle" stroke-width="11" fill="transparent" r="161" cx="171" cy="171" />
@@ -26,55 +20,6 @@
       <p class="progress-time"><span class="minutes">25</span>:<span class="seconds">00</span></p>
       <p class="time-control-pomodoro">START</p>
       <div class="background"></div>
-    </div>
-
-    <div class="settings">
-      <img src="./assets/icon-settings.svg" alt="">
-    </div>
-
-    <div class="modal-settings">
-      <div class="modal-header">
-        <p class="title-modal">Settings</p>
-        <p class="close-modal">X</p>
-      </div>
-      <hr />
-      <div class="modal-body">
-        <p class="minutes-settings subtitle">Time (minutes)</p>
-        <div class="inputs-time">
-          <div class="inputs-wrappers">
-            <p>pomodoro</p>
-            <input id="pomodoro-time" type="number">
-          </div>
-          <div class="inputs-wrappers">
-            <p>short break</p>
-            <input id="short-break-time" type="number">
-          </div>
-          <div class="inputs-wrappers">
-            <p>long break</p>
-            <input id="long-break-time" type="number">
-          </div>
-        </div>
-        <div class="font">
-          <p class="subtitle">font</p>
-          <div class="font-options">
-            <div class="option one active">Aa</div>
-            <div class="option two">Aa</div>
-            <div class="option three">Aa</div>
-          </div>
-        </div>
-        <div class="colors">
-          <p class="subtitle">Color</p>
-          <div class="colors-options-wrapper">
-            <div class="option-color color-one"></div>
-            <div class="option-color color-two"></div>
-            <div class="option-color color-three"></div>
-            <div class="check-icon"></div>
-          </div>
-        </div>
-      </div>
-      <div class="wrapper-btn">
-        <button id="btn-apply-settings" class="btn-apply">Apply</button>
-      </div>
     </div>
   </main>
   <script src="main.js"></script>
