@@ -8,9 +8,9 @@ const circle = document.querySelector(".progress-ring__circle");
 const radius = circle.r.baseVal.value;
 const circumference = radius * 2 * Math.PI;
 
-let perc, initial, totalSecs, seconds, secondsToShow, minsTotal;
-let mins = 24
-let timeoutId = 0
+let perc, initial, totalSecs, minsTotal;
+let mins = 25
+let seconds = 59
 
 circle.style.strokeDasharray = circumference;
 circle.style.strokeDashoffset = circumference;
@@ -20,53 +20,42 @@ function setProgress(percent) {
   circle.style.strokeDashoffset = offset;
 }
 
-function decrementMinutes() {
-  mins--
-  minutesTextEl.innerHTML = mins;
-}
-
 function decrementTime() {
-  if (mins === 0 && secondsToShow === 0) {
+  console.log(seconds)
+  if (mins === 0 && seconds === 0) {
     audioEffect.play()
     secondsTextEl.innerHTML = '00'
     minutesTextEl.innerHTML = 25
     startEl.innerHTML = 'START'
   } else {
-    secondsTextEl.innerHTML = secondsToShow < 10 ? `0${secondsToShow}` : secondsToShow
     perc = Math.ceil(((minsTotal - mins) / minsTotal) * 100)
 
-    if (secondsToShow === 0) {
-      secondsToShow = 60
-      decrementMinutes()
-    }
-
-    timeoutId = window.setTimeout("decrementTime()", 1000);
     setProgress(perc)
     seconds--
-    secondsToShow--
+
+    if (seconds === 0) {
+      seconds = 59
+      mins--
+      minutesTextEl.innerHTML = mins;
+    }
+
+    window.setTimeout("decrementTime()", 1000);
+    secondsTextEl.innerHTML = seconds < 10 ? `0${seconds}` : seconds
   }
 }
 
+function startPomodoro() {
+  minutesTextEl.innerHTML = 24
+  mins--
+  decrementTime()
+}
+
 startEl.addEventListener("click", () => {
-  const currentStatus = startEl.innerHTML
-  
   minsTotal = mins;
-
-  if (currentStatus === 'PAUSE') {
-    clearTimeout(timeoutId)
-    startEl.innerHTML = 'CONTINUE'
-  } else if (currentStatus === 'START') {
-    setTimeout(decrementTime, 60)
-    startEl.innerHTML = 'PAUSE'
-    circle.style.transition = '0.5s'
-    minutesTextEl.innerHTML = mins
-
-    seconds = 59;
-    secondsToShow = 59
-  } else if (currentStatus === 'CONTINUE') {
-    setTimeout(decrementTime, seconds)
-    startEl.innerHTML = 'PAUSE'
-  }
+  startEl.innerHTML = ''
+  setTimeout("startPomodoro()", 1000)
+  circle.style.transition = '0.5s'
+  minutesTextEl.innerHTML = mins
 })
 
 
