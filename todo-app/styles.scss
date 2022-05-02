@@ -25,9 +25,14 @@ header {
 
 .tasks-wrapper {
   padding: 0 26px;
-  margin-top: -5rem;
+  margin-top: -6rem;
   position: absolute;
   box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+  width: 100%;
+
+  input:first-child {
+    margin-bottom: 1rem;
+  }
 
   input {
     width: 327px;
@@ -38,5 +43,11 @@ header {
     font-size: 14px;
     font-weight: 400;
     color: #9495A5;
+  }
+
+  .todo {
+    border-bottom: 1px solid #9495a5;
+    border-end-end-radius: 0;
+    border-end-start-radius: 0;
   }
 }

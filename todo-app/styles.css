@@ -26,10 +26,15 @@ header .content-header h1 {
 
 .tasks-wrapper {
   padding: 0 26px;
-  margin-top: -5rem;
+  margin-top: -6rem;
   position: absolute;
   -webkit-box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
           box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+  width: 100%;
+}
+
+.tasks-wrapper input:first-child {
+  margin-bottom: 1rem;
 }
 
 .tasks-wrapper input {
@@ -41,5 +46,11 @@ header .content-header h1 {
   font-size: 14px;
   font-weight: 400;
   color: #9495A5;
+}
+
+.tasks-wrapper .todo {
+  border-bottom: 1px solid #9495a5;
+  border-end-end-radius: 0;
+  border-end-start-radius: 0;
 }
 /*# sourceMappingURL=styles.css.map */
