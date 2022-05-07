@@ -122,9 +122,7 @@ header .content-header h1 {
 }
 
 .content .info {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -143,9 +141,7 @@ header .content-header h1 {
 
 .content .filters {
   margin-top: 16px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
