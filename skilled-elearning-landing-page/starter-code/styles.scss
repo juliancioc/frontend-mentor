@@ -1,0 +1,57 @@
+* {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    padding: 16px;
+}
+
+button {
+    color: #fff;
+    border: 0;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 45px;
+    align-items: center;
+
+    h1 {
+        color: #13183F;
+        font-size: 28px;
+    }
+
+    button {
+        background: #13183F;
+        width: 140px;
+        height: 48px;
+        border-radius: 28px;
+    }
+}
+
+.hero {
+    h1 {
+        color: #13183F;
+        font-size: 40px;
+        margin: 38px 0 26px 0;
+    }
+
+    p {
+        color: #83869A;
+        line-height: 26px;
+        font-weight: 500;
+    }
+
+    button {
+        background: linear-gradient(180deg, #ff6f48 0%, #f02aa6 100%);
+        border-radius: 31.5px;
+        width: 167px;
+        height: 56px;
+        margin: 24px 0 46px 0;
+    }
+}
