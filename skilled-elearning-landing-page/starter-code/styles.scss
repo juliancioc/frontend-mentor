@@ -5,53 +5,97 @@
 }
 
 body {
-    padding: 16px;
+  padding: 16px;
 }
 
 button {
-    color: #fff;
-    border: 0;
-    font-weight: 700;
-    font-size: 16px;
+  color: #fff;
+  border: 0;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.info-content-plataform img {
+  max-width: 100%;
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 45px;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 45px;
+  align-items: center;
 
-    h1 {
-        color: #13183F;
-        font-size: 28px;
-    }
-
-    button {
-        background: #13183F;
-        width: 140px;
-        height: 48px;
-        border-radius: 28px;
-    }
+  button {
+    background: #13183f;
+    width: 140px;
+    height: 48px;
+    border-radius: 28px;
+  }
 }
 
 .hero {
-    h1 {
-        color: #13183F;
-        font-size: 40px;
-        margin: 38px 0 26px 0;
+  h1 {
+    color: #13183f;
+    font-size: 40px;
+    margin: 38px 0 26px 0;
+    font-weight: 800;
+  }
+
+  p {
+    color: #83869a;
+    line-height: 26px;
+    font-weight: 500;
+  }
+
+  button {
+    background: linear-gradient(180deg, #ff6f48 0%, #f02aa6 100%);
+    border-radius: 31.5px;
+    width: 167px;
+    height: 56px;
+    margin: 24px 0 46px 0;
+  }
+}
+
+.check-out {
+  background: linear-gradient(180deg, #ff6f48 0%, #f02aa6 100%);
+  border-radius: 10px;
+  padding: 32px;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.card-wrapper {
+  .card-courses {
+    position: relative;
+    padding: 29px;
+    box-shadow: 0px 25px 50px rgba(6, 22, 141, 0.04);
+    border-radius: 10px;
+    margin-top: 40px;
+
+    img {
+      position: absolute;
+      top: -1.5rem;
     }
 
-    p {
-        color: #83869A;
-        line-height: 26px;
-        font-weight: 500;
+    .title-course {
+      margin: 24px 0 16px 0;
+      color: #13183f;
+      font-size: 20px;
+      font-weight: 800;
+    }
+
+    .describe-course {
+      color: #83869a;
+      font-weight: 500;
+      margin-bottom: 24px;
     }
 
     button {
-        background: linear-gradient(180deg, #ff6f48 0%, #f02aa6 100%);
-        border-radius: 31.5px;
-        width: 167px;
-        height: 56px;
-        margin: 24px 0 46px 0;
+        color: #f74780;
+        background: none;
+        font-size: 18px;
+        font-weight: bold;
     }
+  }
 }
