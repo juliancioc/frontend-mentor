@@ -4,15 +4,22 @@
   padding: 0;
 }
 
-body {
-  padding: 16px;
-}
-
 button {
   color: #fff;
   border: 0;
   font-weight: 700;
   font-size: 16px;
+}
+
+header,
+.hero,
+.card-wrapper {
+  padding: 16px;
+}
+
+main {
+  max-width: 1110px;
+  margin: 0 auto;
 }
 
 .info-content-plataform img {
@@ -69,6 +76,19 @@ header button {
   color: #fff;
   font-size: 24px;
   font-weight: 800;
+  max-width: 280px;
+  width: 100%;
+}
+
+.card-wrapper {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .card-wrapper .card-courses {
@@ -77,7 +97,8 @@ header button {
   -webkit-box-shadow: 0px 25px 50px rgba(6, 22, 141, 0.04);
           box-shadow: 0px 25px 50px rgba(6, 22, 141, 0.04);
   border-radius: 10px;
-  margin-top: 40px;
+  margin-top: 65px;
+  max-width: 280px;
 }
 
 .card-wrapper .card-courses img {
@@ -103,5 +124,80 @@ header button {
   background: none;
   font-size: 18px;
   font-weight: bold;
+}
+
+footer {
+  height: 120px;
+  background: #13183f;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+footer .wrapper {
+  max-width: 1110px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer .wrapper img {
+  margin-left: 16px;
+}
+
+footer .wrapper button {
+  margin-right: 16px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#4851ff), to(#f02aa6));
+  background: linear-gradient(180deg, #4851ff 0%, #f02aa6 100%);
+  border-radius: 28px;
+  padding: 9px 24px;
+  height: 48px;
+  font-weight: 700;
+}
+
+@media only screen and (min-width: 1068px) {
+  body {
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  .hero p {
+    max-width: 457px;
+    font-size: 18px;
+  }
+  .hero h1 {
+    font-size: 56px;
+  }
+  .hero-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .card-wrapper {
+    margin-top: 170px;
+    margin-bottom: 140px;
+  }
+  .check-out p {
+    font-size: 32px;
+    margin-top: 30px;
+  }
+  .info-content-plataform {
+    content: url("./assets/image-hero-desktop@2x.png");
+    max-width: 950px;
+    position: absolute;
+    right: -14rem;
+    top: -7rem;
+    z-index: -9;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
