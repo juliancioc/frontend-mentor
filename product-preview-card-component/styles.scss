@@ -1,0 +1,11 @@
+$primaryColor: #f2eae2;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  background-color: $primaryColor;
+  height: 100vh;
+}
