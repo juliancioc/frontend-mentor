@@ -1,11 +1,145 @@
 $primaryColor: #f2eae2;
+$whiteColor: #fff;
+$auroMetalColor: #6c7289;
+$aquamarineColor: #3d8168;
+$btnHoverColor: #31725a;
 
 * {
   margin: 0;
   padding: 0;
+  font-family: 'Fraunces', serif;
+}
+
+button {
+  cursor: pointer;
 }
 
 .container {
   background-color: $primaryColor;
   height: 100vh;
+  padding: 28px 16px;
+
+  #toast {
+    background: $aquamarineColor;
+    color: $whiteColor;
+    padding: 1rem;
+    border-radius: 5px;
+    font-size: 12px;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    display: none;
+  }
+
+  .content {
+    margin: 0 auto;
+    background: $whiteColor;
+    border-radius: 10px;
+
+    .img-product {
+      background: url('./assets/product.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      width: 100%;
+      height: 240px;
+    }
+
+    .card-body {
+      padding: 24px;
+
+      .category-name {
+        text-transform: uppercase;
+        color: $auroMetalColor;
+        font-family: 'Montserrat';
+        font-size: 12px;
+        letter-spacing: 5px;
+        font-weight: 500;
+      }
+
+      .product-name {
+        padding: 16px 0 24px 0;
+      }
+
+      .product-description {
+        color: $auroMetalColor;
+        margin-bottom: 24px;
+        font-family: 'Montserrat';
+      }
+
+      .price {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+
+        h2 {
+          color: $aquamarineColor;
+          font-size: 32px;
+          font-weight: 700;
+          margin-right: 24px;
+        }
+
+        .old-price {
+          text-decoration: line-through;
+          color: $auroMetalColor;
+          font-weight: 500;
+        }
+      }
+
+      #btn-add-cart {
+        width: 100%;
+        background-color: $aquamarineColor;
+        color: $whiteColor;
+        font-weight: 700;
+        border: none;
+        padding: 15px;
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        font-size: 14px;
+        font-family: 'Montserrat';
+        transition: background 1s ease;
+
+        img {
+          margin-right: 11px;
+        }
+
+        &:hover {
+          background: $btnHoverColor;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 764px) {
+  .container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    .content {
+      display: flex;
+      height: 450px;
+      width: 600px;
+
+      .img-product {
+        background: url('./assets/product-desktop.png');
+        background-repeat: no-repeat;
+        height: auto;
+        border-top-right-radius: 0;
+        border-end-start-radius: 5px;
+        flex: 2;
+      }
+
+      .card-body {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+    }
+  }
 }
